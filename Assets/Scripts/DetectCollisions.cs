@@ -17,7 +17,6 @@ if(other.CompareTag("Player"))
 PlayerController pc = other.GetComponent<PlayerController>();
 pc.score += scoreToAdd;
 Destroy(gameObject);
-Destroy(other.gameObject);
 }
 }
 // Update is called once per frame
