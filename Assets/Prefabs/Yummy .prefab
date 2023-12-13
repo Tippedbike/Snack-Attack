@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2170937142340473924}
   - component: {fileID: 8677607702086045744}
   - component: {fileID: 510905226667737480}
-  - component: {fileID: 355135966880927848}
   m_Layer: 0
   m_Name: 'Yummy '
   m_TagString: Untagged
@@ -116,7 +115,7 @@ Rigidbody:
   m_GameObject: {fileID: 226500779721079391}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2.5
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -134,15 +133,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &355135966880927848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226500779721079391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16c64b874b84824ab349551c491fbc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

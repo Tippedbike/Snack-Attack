@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+private Rigidbody playerRb;
 public float horizontalInput;
  private float forwardInput;
 public float speed = 10.0f;
 public float xRange = 12;
 public float zRange = 12;
 public int score = 0;
-public bool gameOver = false;
 public ParticleSystem explosionParticles;
 public AudioClip yummySound;
-private AudioSource playerAudio; 
+private AudioSource playerAudio;
 
 // Start is called before the first frame update
 void Start()
 {
     playerAudio = GetComponent<AudioSource>();
+    playerRb = GetComponent<Rigidbody>();
 }
 // Update is called once per frame
 void Update()
@@ -47,14 +48,4 @@ if (transform.position.z > zRange)
 transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
 }
 }
-private void OnCollisionEnter(Collision collision)
-   {
-    if (collision.gameObject.CompareTag("Yummy"))
-       {
-           gameOver = true;
-           Debug.Log("Game Over!");
-           explosionParticles.Play(); 
-       }
-      
-   }
 }
