@@ -13,7 +13,9 @@ public float zRange = 12;
 public int score = 0;
 public ParticleSystem explosionParticles;
 public AudioClip yummySound;
+public AudioClip bombSound;
 private AudioSource playerAudio;
+public bool gameOver = false;
 
 // Start is called before the first frame update
 void Start()
@@ -48,4 +50,19 @@ if (transform.position.z > zRange)
 transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
 }
 }
+private void OnCollisionEnter(Collision collision)
+   {
+       if (collision.gameObject.CompareTag("Yummy"))
+       {
+          playerAudio.PlayOneShot(yummySound, 1.0f);
+       }
+       else if (collision.gameObject.CompareTag("Bomb"))
+       {
+           gameOver = true;
+           Debug.Log("Game Over!");
+           explosionParticles.Play(); 
+           playerAudio.PlayOneShot(bombSound, 1.0f);
+       }
+      
+   }
 }
