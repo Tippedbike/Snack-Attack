@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2170937142340473924}
   - component: {fileID: 8677607702086045744}
   - component: {fileID: 510905226667737480}
-  - component: {fileID: 5820709676057672699}
+  - component: {fileID: -681748092059315681}
   m_Layer: 0
   m_Name: 'Yummy '
   m_TagString: Yummy
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5820709676057672699
+--- !u!114 &-681748092059315681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -103,7 +103,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -123,15 +123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04475327eeb86a41a1d6caf83269e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: 5
-  speed: 15
   xRange: 12
   zRange: 12
-  score: 0
+  horizontalInput: 5
+  speed: 15
   explosionParticles: {fileID: 9125212449759046732, guid: b9c7b799a4f15421b9a2f41513e67972, type: 3}
   yummySound: {fileID: 8300000, guid: b340261c2436a462f97ab274bd41cb7f, type: 3}
   bombSound: {fileID: 8300000, guid: 088b1051fa5d34158a6c0320e369233e, type: 3}
-  gameOver: 0
+  score: 0
 --- !u!114 &8702418956557432311
 MonoBehaviour:
   m_ObjectHideFlags: 0
