@@ -5,22 +5,29 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 private Rigidbody playerRb;
-public float horizontalInput;
- private float forwardInput;
-public float speed = 10.0f;
+
 public float xRange = 12;
 public float zRange = 12;
-public int score = 0;
+//boundaries for fun :)
+
+public float horizontalInput;
+private float forwardInput;
+//movement 
+
+public float speed = 10.0f;
+
 public ParticleSystem explosionParticles;
+
+private AudioSource playerAudio;
 public AudioClip yummySound;
 public AudioClip bombSound;
-private AudioSource playerAudio;
-public bool gameOver = false;
+//sound
 
+public int score = 0;
 // Start is called before the first frame update
 void Start()
 {
-    playerAudio = GetComponent<AudioSource>();
+    playerAudio = GetComponent<AudioSource>(); //gets audio comp
     playerRb = GetComponent<Rigidbody>();
 }
 // Update is called once per frame
@@ -31,6 +38,7 @@ horizontalInput = Input.GetAxis("Horizontal");
 forwardInput = Input.GetAxis("Vertical");
 transform. Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+
 //keeps player from going out of bounds
 if (transform.position.x < -xRange)
 {
@@ -50,16 +58,14 @@ if (transform.position.z > zRange)
 transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
 }
 }
-private void OnCollisionEnter(Collision collision)
+void OnCollisionEnter(Collision other)
    {
-       if (collision.gameObject.CompareTag("Yummy"))
+       if (other.gameObject.CompareTag("Yummy"))
        {
           playerAudio.PlayOneShot(yummySound, 1.0f);
        }
-       else if (collision.gameObject.CompareTag("Bomb"))
+       else if (other.gameObject.CompareTag("Bomb"))
        {
-           gameOver = true;
-           Debug.Log("Game Over!");
            explosionParticles.Play(); 
            playerAudio.PlayOneShot(bombSound, 1.0f);
        }
